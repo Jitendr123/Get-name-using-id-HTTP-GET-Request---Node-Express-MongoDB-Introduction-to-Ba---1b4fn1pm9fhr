@@ -6,7 +6,7 @@ const app = express();
 const productNames = JSON.parse(
     fs.readFileSync(`${__dirname}/data/names.json`)
 );
-app.get('/api/v1/names:id',async(req,res)=>{
+app.get('/api/v1/names/:id',async(req,res)=>{
     const productId=req.params.id.split(":");
     const product=await productNames.find(product=>product.id==productId[1])
     if(product){
