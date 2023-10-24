@@ -9,7 +9,7 @@ const productNames = JSON.parse(
 app.get('/api/v1/names/:id',async(req,res)=>{
     const productId=req.params.id.split(":");
     const product=await productNames.find(product=>product.id==productId[1])
-    if(product){
+    if(!!product){
         res.statusCode=200
         res.json({    
             status: "success", 
