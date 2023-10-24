@@ -15,10 +15,8 @@ app.get('/api/v1/names/:id',async(req,res)=>{
             status: "success", 
             message: "Product name fetched successfully",
             data: { 
-                name:{
                     id: product.id,
                     name:product.name
-                }
              } 
         })
     }else{
